@@ -1,12 +1,11 @@
-import View from "./components/View"
-
+import View from "./components/View";
 
 const App = () => {
   return (
     <>
-    <View />
+      <View />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

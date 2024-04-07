@@ -98,7 +98,7 @@ function View() {
     if (!isNaN(entry) && !isNaN(sl) && sl !== 0 && !isNaN(fundsValue)) {
       const risk = entry - sl;
       const positionSize = (fundsValue * 0.01) / risk;
-      return positionSize.toFixed(2);
+      return positionSize.toFixed(0);
     }
     return "";
   };
@@ -276,7 +276,7 @@ function View() {
                   Stop Loss
                 </TableSortLabel>
               </TableCell>
-              <TableCell>Target</TableCell>
+              <TableCell sx={{ pl: "35px" }}>Target</TableCell>
               <TableCell>Modify SL</TableCell>
               <TableCell>Edit</TableCell>
               <TableCell>Delete</TableCell>
@@ -287,9 +287,48 @@ function View() {
               <TableRow key={index}>
                 <TableCell>{stock.stockName}</TableCell>
                 <TableCell>{stock.entryPoint}</TableCell>
-                <TableCell>{stock.positionSize}</TableCell>
-                <TableCell>{stock.stopLoss}</TableCell>
-                <TableCell>{stock.target}</TableCell>
+                <TableCell>
+                  <Box
+                    sx={{
+                      width: "80px",
+                      textAlign: "center",
+                      backgroundColor: "#eef2ff",
+                      color: "#0b69b9",
+                      borderRadius: "20px",
+                      padding: "5px 0",
+                    }}
+                  >
+                    {stock.positionSize}
+                  </Box>
+                </TableCell>
+                <TableCell>
+                  <Box
+                    sx={{
+                      width: "60px",
+                      textAlign: "center",
+                      backgroundColor: "#fef2f2",
+                      color: "#cf192a",
+                      borderRadius: "20px",
+                      padding: "5px 0",
+                    }}
+                  >
+                    {stock.stopLoss}
+                  </Box>
+                </TableCell>
+                <TableCell>
+                  <Box
+                    sx={{
+                      width: "80px",
+                      textAlign: "center",
+                      backgroundColor: "#ecfdf5",
+                      color: "#008447",
+                      borderRadius: "20px",
+                      padding: "5px 0",
+                    }}
+                  >
+                    {stock.target}
+                  </Box>
+                </TableCell>
                 <TableCell>{stock.modifySL}</TableCell>
                 <TableCell>
                   <IconButton
